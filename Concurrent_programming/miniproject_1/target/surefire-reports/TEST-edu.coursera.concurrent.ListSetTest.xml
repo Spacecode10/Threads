@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.coursera.concurrent.ListSetTest" time="544.719" tests="6" errors="0" skipped="0" failures="4">
+  <properties>
+    <property name="idea.version" value="2023.1.7"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="19.0.2+7-44"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\mit\Desktop\Java\Threads\Concurrent_programming\miniproject_1"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\mit\Desktop\Java\Threads\Concurrent_programming\miniproject_1"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="19.0.2+7-44"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\mit\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-19\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk-19\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\MinGW\bin;C:\Users\mit\Desktop\mysql-connector;%JAVA_HOME%\bin;C:\Program Files\Java\scripts;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PostgreSQL\15\bin;C:\Program Files\Git\cmd;C:\Users\mit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;C:\Program Files\Git LFS;C:\Program Files\Redis\;C:\Program Files (x86)\gnupg\bin;C:\Users\mit\Desktop\Impractical\chrome-win64;C:\Users\mit\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\mit\AppData\Local\Microsoft\WindowsApps;C:\Users\mit\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\bin;D:\anaconda;;D:\PyCharm 2024.1.1\bin;;C:\Users\mit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;;C:\Users\mit\AppData\Local\Programs\Ollama;."/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\plugins\maven\lib\maven3/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="63.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\mit"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="19"/>
+    <property name="user.name" value="mit"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="java.vm.specification.version" value="19"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2023.1.7 test"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-19"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="19.0.2"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="sun.stderr.encoding" value="UTF-8"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2023-01-17"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.stdout.encoding" value="UTF-8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="testCoarseGrainedLockingRandomLarge" classname="edu.coursera.concurrent.ListSetTest" time="251.82"/>
+  <testcase name="testCoarseGrainedLockingRepeatingLarge" classname="edu.coursera.concurrent.ListSetTest" time="64.177"/>
+  <testcase name="testReadWriteLocksRepeatingLarge" classname="edu.coursera.concurrent.ListSetTest" time="46.62">
+    <failure message="expected:&lt;2&gt; but was:&lt;10001&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<2> but was:<10001>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:280)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:198)
+	at junit.framework.Assert.assertEquals(Assert.java:204)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksHelper(ListSetTest.java:203)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksRepeatingLarge(ListSetTest.java:117)
+]]></failure>
+    <system-out><![CDATA[=========================================================
+RWCoarseList vs. SyncList (Large Repeating)
+=========================================================
+# threads = 4
+0.8816251154201293x improvement in add throughput (100.54461667364893 -> 88.6426592797784)
+3.15723941657773x improvement in contains throughput (108.16901408450704 -> 341.5154749199573)
+Infinityx improvement in remove throughput (736.1963190184049 -> Infinity)
+=========================================================
+]]></system-out>
+    <system-err><![CDATA[Exception in thread "Thread-248" Exception in thread "Thread-249" Exception in thread "Thread-250" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-251" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-275" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-274" Exception in thread "Thread-273" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-272" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-297" Exception in thread "Thread-296" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-298" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-299" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-321" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-322" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-320" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-323" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-345" Exception in thread "Thread-347" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-344" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-346" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+]]></system-err>
+  </testcase>
+  <testcase name="testReadWriteLocksRandomSmall" classname="edu.coursera.concurrent.ListSetTest" time="31.32">
+    <failure message="expected:&lt;13726&gt; but was:&lt;17677&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<13726> but was:<17677>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:280)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:198)
+	at junit.framework.Assert.assertEquals(Assert.java:204)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksHelper(ListSetTest.java:203)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksRandomSmall(ListSetTest.java:101)
+]]></failure>
+    <system-out><![CDATA[=========================================================
+RWCoarseList vs. SyncList (Small Random)
+=========================================================
+# threads = 4
+0.7123420796890184x improvement in add throughput (36.38017280582083 -> 25.915127955944282)
+2.891577477896696x improvement in contains throughput (12.87415513356936 -> 37.22661703117729)
+Infinityx improvement in remove throughput (14.477017734346724 -> Infinity)
+=========================================================
+]]></system-out>
+    <system-err><![CDATA[Exception in thread "Thread-370" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-368" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-369" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-371" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-394" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-392" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-393" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-395" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-418" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-416" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-419" Exception in thread "Thread-417" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-442" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-443" Exception in thread "Thread-441" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-440" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-466" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-467" Exception in thread "Thread-465" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-464" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+]]></system-err>
+  </testcase>
+  <testcase name="testReadWriteLocksRepeatingSmall" classname="edu.coursera.concurrent.ListSetTest" time="23.024">
+    <failure message="expected:&lt;2&gt; but was:&lt;10001&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<2> but was:<10001>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:280)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:198)
+	at junit.framework.Assert.assertEquals(Assert.java:204)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksHelper(ListSetTest.java:203)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksRepeatingSmall(ListSetTest.java:133)
+]]></failure>
+    <system-out><![CDATA[=========================================================
+RWCoarseList vs. SyncList (Small Repeating)
+=========================================================
+# threads = 4
+0.8841260520649833x improvement in add throughput (106.2652202789462 -> 93.95184967704051)
+3.1540145985401455x improvement in contains throughput (111.08539689886601 -> 350.3649635036496)
+Infinityx improvement in remove throughput (428.9544235924933 -> Infinity)
+=========================================================
+]]></system-out>
+    <system-err><![CDATA[Exception in thread "Thread-488" Exception in thread "Thread-490" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-491" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-489" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-512" Exception in thread "Thread-514" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-513" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-515" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-538" Exception in thread "Thread-537" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-536" Exception in thread "Thread-539" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-563" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-560" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-562" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-561" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-586" Exception in thread "Thread-584" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-587" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-585" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+]]></system-err>
+  </testcase>
+  <testcase name="testReadWriteLocksRandomLarge" classname="edu.coursera.concurrent.ListSetTest" time="127.758">
+    <failure message="expected:&lt;19132&gt; but was:&lt;31551&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<19132> but was:<31551>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:280)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:198)
+	at junit.framework.Assert.assertEquals(Assert.java:204)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksHelper(ListSetTest.java:203)
+	at edu.coursera.concurrent.ListSetTest.testReadWriteLocksRandomLarge(ListSetTest.java:85)
+]]></failure>
+    <system-out><![CDATA[=========================================================
+RWCoarseList vs. SyncList (Large Random)
+=========================================================
+# threads = 4
+0.7732268414226227x improvement in add throughput (14.125540743356582 -> 10.922247252372175)
+3.3341996455995275x improvement in contains throughput (5.668934240362812 -> 18.901358535144713)
+Infinityx improvement in remove throughput (7.024630109320806 -> Infinity)
+=========================================================
+]]></system-out>
+    <system-err><![CDATA[Exception in thread "Thread-611" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-609" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-610" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-608" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-635" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-633" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-634" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-632" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-659" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-657" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-658" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-656" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-683" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-681" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-682" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-680" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-707" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-705" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-706" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Exception in thread "Thread-704" java.lang.IllegalMonitorStateException
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease(ReentrantReadWriteLock.java:372)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1007)
+	at java.base/java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock(ReentrantReadWriteLock.java:1147)
+	at edu.coursera.concurrent.CoarseLists$RWCoarseList.remove(CoarseLists.java:202)
+	at edu.coursera.concurrent.RemoveTestThread.run(RemoveTestThread.java:21)
+	at edu.coursera.concurrent.ListSetTest.lambda$launchAndJoinAll$4(ListSetTest.java:290)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+]]></system-err>
+  </testcase>
+</testsuite>
