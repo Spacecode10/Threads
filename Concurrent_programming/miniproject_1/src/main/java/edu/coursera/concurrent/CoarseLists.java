@@ -22,7 +22,8 @@ public final class CoarseLists {
          * TODO Declare a lock for this class to be used in implementing the
          * concurrent add, remove, and contains methods below.
          */
-        ReentrantLock lock = new ReentrantLock();
+        private final ReentrantLock lock = new ReentrantLock();
+
         /**
          * Default constructor.
          */
@@ -38,7 +39,6 @@ public final class CoarseLists {
         @Override
         boolean add(final Integer object) {
             try {
-
                 lock.lock();
                 Entry pred = this.head;
                 Entry curr = pred.next;
@@ -56,8 +56,7 @@ public final class CoarseLists {
                     pred.next = entry;
                     return true;
                 }
-            }
-            finally {
+            } finally {
                 lock.unlock();
             }
         }
@@ -68,9 +67,8 @@ public final class CoarseLists {
          * TODO Use a lock to protect against concurrent access.
          */
         @Override
-         boolean remove(final Integer object) {
+        boolean remove(final Integer object) {
             try {
-
                 lock.lock();
                 Entry pred = this.head;
                 Entry curr = pred.next;
@@ -86,8 +84,7 @@ public final class CoarseLists {
                 } else {
                     return false;
                 }
-            }
-            finally {
+            } finally {
                 lock.unlock();
             }
         }
@@ -100,7 +97,6 @@ public final class CoarseLists {
         @Override
         boolean contains(final Integer object) {
             try {
-
                 lock.lock();
                 Entry pred = this.head;
                 Entry curr = pred.next;
@@ -110,8 +106,7 @@ public final class CoarseLists {
                     curr = curr.next;
                 }
                 return object.equals(curr.object);
-            }
-            finally {
+            } finally {
                 lock.unlock();
             }
         }
@@ -134,6 +129,7 @@ public final class CoarseLists {
          * implementing the concurrent add, remove, and contains methods below.
          */
         private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+
         /**
          * Default constructor.
          */
@@ -148,8 +144,7 @@ public final class CoarseLists {
          */
         @Override
         boolean add(final Integer object) {
-            try
-            {
+            try {
                 lock.writeLock().lock();
                 Entry pred = this.head;
                 Entry curr = pred.next;
@@ -167,8 +162,7 @@ public final class CoarseLists {
                     pred.next = entry;
                     return true;
                 }
-            }
-            finally {
+            } finally {
                 lock.writeLock().unlock();
             }
         }
@@ -180,9 +174,8 @@ public final class CoarseLists {
          */
         @Override
         boolean remove(final Integer object) {
-            try
-            {
-                lock.readLock().lock();
+            try {
+                lock.writeLock().lock();
                 Entry pred = this.head;
                 Entry curr = pred.next;
 
@@ -197,8 +190,7 @@ public final class CoarseLists {
                 } else {
                     return false;
                 }
-            }
-            finally {
+            } finally {
                 lock.writeLock().unlock();
             }
         }
@@ -210,8 +202,7 @@ public final class CoarseLists {
          */
         @Override
         boolean contains(final Integer object) {
-            try
-            {
+            try {
                 lock.readLock().lock();
                 Entry pred = this.head;
                 Entry curr = pred.next;
@@ -221,8 +212,7 @@ public final class CoarseLists {
                     curr = curr.next;
                 }
                 return object.equals(curr.object);
-            }
-            finally {
+            } finally {
                 lock.readLock().unlock();
             }
         }
